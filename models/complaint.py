@@ -12,7 +12,7 @@ class ComplaintModel(db.Model):
     description = db.Column(db.Text, nullable=False)
     photo_url = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.Float, nullable=False)
-    created_on = db.Column(db.Datetime, nullable=False, server_default=func.now())
+    created_on = db.Column(db.DateTime, nullable=False, server_default=func.now())
     status = db.Column(db.Enum(State), nullable=False, default=State.pending)
     complainer_id = db.Column(db.Integer, db.ForeignKey('complainer.id'), nullable=False)
     complainer = db.relationship('ComplainerModel')
