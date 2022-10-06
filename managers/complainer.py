@@ -15,7 +15,6 @@ class ComplainerManager:
         db.session.commit()
         return AuthManager.encode_token(user)
 
-
     @staticmethod
     def login(login_data):
         complainer = ComplainerModel.query.filter_by(email=login_data['email']).first()
